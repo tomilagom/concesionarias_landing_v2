@@ -28,35 +28,38 @@ function ContactForm() {
 
   const f2Valid = f2.tipoVehiculo && f2.vendedores;
 
-  function handleContinuar() {
-    // Customer.io: identify + track
-    if (window.cioanalytics) {
-      window.cioanalytics.identify(f1.email, {
-        email: f1.email,
-        full_name: f1.nombre,
-        business_name: f1.empresa,
-        phone: f1.telefono,
-      });
-      window.cioanalytics.track('form_submitted', {
-        email: f1.email,
-        full_name: f1.nombre,
-        business_name: f1.empresa,
-        phone: f1.telefono,
-      });
+  function cio(method, ...args) {
+    const analytics = window.cioanalytics;
+    if (analytics && typeof analytics[method] === 'function') {
+      analytics[method](...args);
+    } else {
+      console.warn('[CIO] cioanalytics not ready — method:', method, args);
     }
+  }
+
+  function handleContinuar() {
+    cio('identify', f1.email, {
+      email: f1.email,
+      full_name: f1.nombre,
+      business_name: f1.empresa,
+      phone: f1.telefono,
+    });
+    cio('track', 'form_submitted', {
+      email: f1.email,
+      full_name: f1.nombre,
+      business_name: f1.empresa,
+      phone: f1.telefono,
+    });
     setStep(2);
   }
 
   function handleSubmit() {
-    // Customer.io: track business info
-    if (window.cioanalytics) {
-      window.cioanalytics.track('business_info_submitted', {
-        tipo_vehiculo: f2.tipoVehiculo,
-        vendedores: f2.vendedores,
-        comentarios: f2.comentarios,
-        ...utmParams,
-      });
-    }
+    cio('track', 'business_info_submitted', {
+      tipo_vehiculo: f2.tipoVehiculo,
+      vendedores: f2.vendedores,
+      comentarios: f2.comentarios,
+      ...utmParams,
+    });
     // POST to /api/contact (no-op if server isn't wired — form still progresses)
     fetch('/api/contact', {
       method: 'POST',

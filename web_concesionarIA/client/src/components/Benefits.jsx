@@ -1,35 +1,36 @@
 import React, { useEffect, useState } from 'react';
+import { Zap, Target, TrendingUp, Bot, Link2, Shield } from 'lucide-react';
 
 const WA_URL = 'https://wa.me/19205414464';
 
 const benefits = [
   {
-    icon: '⚡',
+    icon: Zap,
     title: 'Respuesta en menos de 5 segundos',
     desc: 'Tu asistente IA responde a cada consulta de auto al instante, las 24 horas. Ningún prospecto se va sin respuesta.',
   },
   {
-    icon: '🎯',
+    icon: Target,
     title: 'Solo pagas por leads calificados',
     desc: 'El modelo de ConcesionarIA está alineado con tus resultados: pagas únicamente por los prospectos que cumplen tus criterios de compra.',
   },
   {
-    icon: '📈',
+    icon: TrendingUp,
     title: '5.2% vs 0.3% de conversión',
     desc: 'El chat convierte 17 veces más que los formularios web clásicos. Más leads capturados con el mismo presupuesto de pauta.',
   },
   {
-    icon: '🤖',
+    icon: Bot,
     title: 'IA entrenada en ventas automotrices',
     desc: 'No es un chatbot genérico. Conoce modelos, versiones, financiación y planes de entrega. Habla como un vendedor experto.',
   },
   {
-    icon: '🔗',
+    icon: Link2,
     title: '+25 integraciones automotrices',
     desc: 'Conecta con Mercado Libre Autos, OLX, Kavak, tu CRM y portales de leads sin escribir código.',
   },
   {
-    icon: '🛡️',
+    icon: Shield,
     title: 'Seguridad y privacidad',
     desc: 'Datos cifrados en tránsito y en reposo. Cumplimiento LGPD/GDPR. La información de tus clientes siempre protegida.',
   },
@@ -67,7 +68,7 @@ export default function Benefits() {
                 e.currentTarget.style.background = 'rgba(13,10,30,0.5)';
               }}
             >
-              <div style={styles.iconWrap}>{b.icon}</div>
+              <div style={styles.iconWrap}><b.icon size={22} color="#a78bfa" strokeWidth={1.5} /></div>
               <div>
                 <h3 style={styles.cardTitle}>{b.title}</h3>
                 <p style={styles.cardDesc}>{b.desc}</p>

@@ -1,32 +1,33 @@
 import React from 'react';
 import Footer from '../components/Footer';
+import { Frown, Clock, PhoneOff, Banknote, Building2, Key, Building, User, Megaphone, Trophy, AlertCircle, Sparkles, Globe } from 'lucide-react';
 
 const WA_URL = 'https://wa.me/19205414464';
 
 const problems = [
-  { icon: '😔', stat: '27%', label: 'de leads digitales reciben seguimiento efectivo en concesionarias tradicionales.' },
-  { icon: '⏱️', stat: '40%', label: 'de los leads se pierden por tiempos de respuesta superiores a 30 minutos.' },
-  { icon: '📵', stat: '70%', label: 'de las ventas no tienen trazabilidad a la fuente del lead original.' },
-  { icon: '💸', stat: '3.000', label: 'leads/mes que un equipo humano no puede gestionar correctamente sin herramientas de IA.' },
+  { icon: Frown, stat: '27%', label: 'de leads digitales reciben seguimiento efectivo en concesionarias tradicionales.' },
+  { icon: Clock, stat: '40%', label: 'de los leads se pierden por tiempos de respuesta superiores a 30 minutos.' },
+  { icon: PhoneOff, stat: '70%', label: 'de las ventas no tienen trazabilidad a la fuente del lead original.' },
+  { icon: Banknote, stat: '3.000', label: 'leads/mes que un equipo humano no puede gestionar correctamente sin herramientas de IA.' },
 ];
 
 const dealerTypes = [
   {
-    icon: '🏢',
+    icon: Building2,
     title: 'Franquicias 0km',
     desc: 'Toyota, Ford, VW, Nissan y todas las grandes marcas. Automatizá la calificación de leads de Meta Ads y Google con IA entrenada en tu catálogo.',
     benefits: ['Integración con DMS/VMS', 'Catálogo de modelos y versiones', 'Test drive automatizado'],
     color: '#6D2EFF',
   },
   {
-    icon: '🔑',
+    icon: Key,
     title: 'Usados y Multimarca',
     desc: 'Alta rotación de stock y múltiples fuentes de leads (Mercado Libre, OLX, Kavak). ConcesionarIA unifica todo en un solo flujo automatizado.',
     benefits: ['Multi-portal integrado', 'Gestión de permuta con IA', 'Re-enganche de leads fríos'],
     color: '#FF6A00',
   },
   {
-    icon: '🏗️',
+    icon: Building,
     title: 'Grupos Automotrices',
     desc: 'Múltiples marcas y sucursales bajo un mismo grupo. Dashboard unificado con visibilidad total de cada vendedor en cada marca.',
     benefits: ['Dashboard multi-marca', 'Seller Leaderboard grupal', 'Integración SAP / Dynamics'],
@@ -36,48 +37,48 @@ const dealerTypes = [
 
 const testimonials = [
   {
-    quote: 'Implementamos ConcesionarIA en menos de 2 semanas. En el primer mes, triplicamos la cantidad de leads que llegaban calificados a nuestro equipo. El ROI fue inmediato.',
-    author: 'Didier Arias',
-    role: 'CEO & Owner',
+    quote: 'La solución nos permitió transformar WhatsApp — nuestro canal más caótico — en la fuente de datos más valiosa del negocio. Por primera vez, los gerentes tienen visibilidad real del funnel y los vendedores compiten por responder primero.',
+    author: 'Gerente',
+    role: 'Gerente',
     company: 'Grupo Garden',
-    market: '40% del mercado 0km en Paraguay',
-    emoji: '🇵🇾',
+    market: 'Paraguay',
+    flagIcon: Globe,
   },
   {
-    quote: 'Antes el equipo de ventas perdía tiempo respondiendo leads que nunca iban a comprar. Ahora solo atienden prospectos listos para cerrar. La productividad subió un 80%.',
-    author: 'Carlos Mendoza',
-    role: 'Gerente Comercial',
-    company: 'Toyota Belgrano',
-    market: 'Buenos Aires, Argentina',
-    emoji: '🇦🇷',
+    quote: 'Antes perdíamos leads todos los días porque nadie sabía qué había pasado con el cliente después del primer WhatsApp. Ahora cada conversación queda registrada, asignada y con seguimiento automático. Subimos el cierre en menos de un mes.',
+    author: 'Gerente',
+    role: 'Gerente',
+    company: 'Nissan Paraguay',
+    market: 'Paraguay',
+    flagIcon: Globe,
   },
   {
-    quote: 'El dashboard nos dio visibilidad que nunca tuvimos. Por primera vez sé qué campaña de Meta genera ventas reales, no solo clics.',
-    author: 'Valentina Ríos',
-    role: 'Marketing Manager',
-    company: 'Ford San Isidro',
-    market: 'Zona Norte, Argentina',
-    emoji: '🇦🇷',
+    quote: 'El equipo de vendedores ahora llega a cada cliente ya calificado. La IA filtra, responde y agenda — nosotros cerramos. Es la primera vez que siento que tenemos un proceso de ventas de verdad por WhatsApp.',
+    author: 'Gerente',
+    role: 'Gerente',
+    company: 'Fiat',
+    market: '',
+    flagIcon: Globe,
   },
 ];
 
 const personas = [
   {
-    icon: '👔',
+    icon: User,
     title: 'El CEO/Dueño',
     pain: '"Gasto $5,000/mes en publicidad y no sé cuántos autos vendo gracias a eso."',
     gain: 'ROI exacto por canal. Dashboard en tiempo real. Un auto más por mes paga todo el sistema.',
     color: '#6D2EFF',
   },
   {
-    icon: '📢',
+    icon: Megaphone,
     title: 'El Marketing Manager',
     pain: '"Genero 3,000 leads por mes pero el equipo de ventas dice que son de baja calidad."',
     gain: 'Atribución multicanal. Solo leads calificados llegan a ventas. Optimización automática de pauta.',
     color: '#FF6A00',
   },
   {
-    icon: '🏆',
+    icon: Trophy,
     title: 'El Gerente de Ventas',
     pain: '"No sé qué hace mi equipo con los leads. La mitad ni los carga en el CRM."',
     gain: 'Anti-Ghosting Engine. Reasignación automática. Seller leaderboard en vivo.',
@@ -120,7 +121,7 @@ export default function Concesionarias() {
             <div style={styles.problemsGrid} className="problems-grid">
               {problems.map((p, i) => (
                 <div key={i} style={styles.problemCard}>
-                  <div style={styles.problemIcon}>{p.icon}</div>
+                  <div style={styles.problemIcon}><p.icon size={32} color="#FF6A00" strokeWidth={1.5} /></div>
                   <div style={styles.problemStat}>{p.stat}</div>
                   <p style={styles.problemLabel}>{p.label}</p>
                 </div>
@@ -140,7 +141,7 @@ export default function Concesionarias() {
               {dealerTypes.map((d, i) => (
                 <div key={i} style={{ ...styles.dealerCard, borderColor: `${d.color}25` }}>
                   <div style={{ ...styles.dealerIconWrap, background: `${d.color}15` }}>
-                    <span style={styles.dealerIcon}>{d.icon}</span>
+                    <d.icon size={24} color={d.color} strokeWidth={1.5} />
                   </div>
                   <h3 style={{ ...styles.dealerTitle, color: d.color }}>{d.title}</h3>
                   <p style={styles.dealerDesc}>{d.desc}</p>
@@ -174,15 +175,15 @@ export default function Concesionarias() {
               {personas.map((p, i) => (
                 <div key={i} style={styles.personaCard}>
                   <div style={{ ...styles.personaIconWrap, background: `${p.color}15` }}>
-                    <span style={styles.personaIcon}>{p.icon}</span>
+                    <p.icon size={24} color={p.color} strokeWidth={1.5} />
                   </div>
                   <h3 style={styles.personaTitle}>{p.title}</h3>
                   <div style={styles.personaPain}>
-                    <span style={styles.painLabel}>😤 Dolor actual</span>
+                    <span style={styles.painLabel}><AlertCircle size={11} style={{ verticalAlign: 'middle', marginRight: '4px' }} />Dolor actual</span>
                     <p style={styles.painText}>{p.pain}</p>
                   </div>
                   <div style={styles.personaGain}>
-                    <span style={{ ...styles.gainLabel, color: p.color }}>✨ Con ConcesionarIA</span>
+                    <span style={{ ...styles.gainLabel, color: p.color }}><Sparkles size={11} style={{ verticalAlign: 'middle', marginRight: '4px' }} />Con ConcesionarIA</span>
                     <p style={styles.gainText}>{p.gain}</p>
                   </div>
                 </div>
@@ -204,11 +205,10 @@ export default function Concesionarias() {
                   <div style={styles.quoteChar}>"</div>
                   <p style={styles.quoteText}>{t.quote}</p>
                   <div style={styles.testimonialMeta}>
-                    <div style={styles.testimonialAvatar}>{t.emoji}</div>
+                    <div style={styles.testimonialAvatar}><t.flagIcon size={20} color="#6D2EFF" strokeWidth={1.5} /></div>
                     <div>
-                      <div style={styles.testimonialName}>{t.author}</div>
-                      <div style={styles.testimonialRole}>{t.role} · {t.company}</div>
-                      <div style={styles.testimonialMarket}>{t.market}</div>
+                      <div style={styles.testimonialName}>{t.role} · {t.company}</div>
+                      {t.market && <div style={styles.testimonialMarket}>{t.market}</div>}
                     </div>
                   </div>
                 </div>

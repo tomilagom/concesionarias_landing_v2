@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Package, Car, DollarSign, BookOpen, PenLine, MessageCircle } from 'lucide-react';
 
 const WA_URL = 'https://wa.me/19205414464';
 
 const navItems = [
-  { label: 'Producto',       path: '/producto',       icon: '📦' },
-  { label: 'Concesionarias', path: '/concesionarias', icon: '🚗' },
-  { label: 'Precios',        path: '/precios',        icon: '💰' },
-  { label: 'Recursos',       path: '/recursos',       icon: '📚' },
-  { label: 'Blog',           path: '/blog',           icon: '✍️' },
+  { label: 'Producto',       path: '/producto',       icon: Package },
+  { label: 'Concesionarias', path: '/concesionarias', icon: Car },
+  { label: 'Precios',        path: '/precios',        icon: DollarSign },
+  { label: 'Recursos',       path: '/recursos',       icon: BookOpen },
+  { label: 'Blog',           path: '/blog',           icon: PenLine },
 ];
 
 function LogoIcon({ size = 32 }) {
@@ -94,11 +95,6 @@ export default function Navbar() {
 
         {/* Desktop action buttons */}
         <div className="nav-desktop-actions" style={s.actions}>
-          <button style={s.loginBtn} onClick={() => window.open(WA_URL, '_blank')}
-            onMouseEnter={e => { e.currentTarget.style.borderColor = '#6D2EFF'; e.currentTarget.style.color = '#fff'; }}
-            onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(109,46,255,0.4)'; e.currentTarget.style.color = '#a0aec0'; }}>
-            Iniciar sesión
-          </button>
           <button style={s.signupBtn} onClick={() => window.open(WA_URL, '_blank')}
             onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
             onMouseLeave={e => (e.currentTarget.style.opacity = '1')}>
@@ -159,7 +155,7 @@ export default function Navbar() {
                   color: active ? '#fff' : '#a0aec0',
                 }}
               >
-                <span style={s.drawerLinkIcon}>{item.icon}</span>
+                <span style={s.drawerLinkIcon}><item.icon size={18} /></span>
                 <span>{item.label}</span>
                 {active && <span style={s.drawerActiveDot} />}
               </Link>
@@ -173,10 +169,7 @@ export default function Navbar() {
         {/* CTA buttons */}
         <div style={s.drawerCtas}>
           <button style={s.drawerWaBtn} onClick={() => window.open(WA_URL, '_blank')}>
-            <span>💬</span> Solicitar demo por WhatsApp
-          </button>
-          <button style={s.drawerLoginBtn} onClick={() => window.open(WA_URL, '_blank')}>
-            Iniciar sesión
+            <MessageCircle size={16} /> Solicitar demo por WhatsApp
           </button>
         </div>
 

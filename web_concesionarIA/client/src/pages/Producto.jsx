@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Footer from '../components/Footer';
+import { MessageCircle, Brain, BarChart3, Bot, Target, RefreshCw, TrendingUp, Link2, Smartphone, Eye, Briefcase, DollarSign, Flame, ClipboardList } from 'lucide-react';
 
 const WA_URL = 'https://wa.me/19205414464';
 
@@ -9,7 +10,7 @@ const layers = [
     name: 'Gochat',
     subtitle: 'El Gateway Conversacional',
     color: '#6D2EFF',
-    icon: '💬',
+    icon: MessageCircle,
     points: [
       'Gestión híbrida: IA y vendedor humano en el mismo hilo de WhatsApp.',
       'Entrega catálogos interactivos, PDF y ubicaciones del concesionario dentro de WhatsApp.',
@@ -22,7 +23,7 @@ const layers = [
     name: 'Customer.io',
     subtitle: 'El Cerebro: CDP + Motor de Lógica',
     color: '#FF6A00',
-    icon: '🧠',
+    icon: Brain,
     points: [
       'Automatizaciones basadas en comportamiento real, no simples timers de 24h.',
       'Motor Anti-Ghosting: si un vendedor no responde a un lead caliente en 30 min, el sistema reasigna.',
@@ -35,7 +36,7 @@ const layers = [
     name: 'Dashboard BI',
     subtitle: 'La Capa de Visibilidad',
     color: '#00C1D5',
-    icon: '📊',
+    icon: BarChart3,
     points: [
       'Seller Leaderboard: quién responde más rápido, quién cierra más leads calificados.',
       'Heatmaps por modelo: qué vehículo genera más test drives vs consultas de precio.',
@@ -56,12 +57,12 @@ const conversationSteps = [
 ];
 
 const capabilities = [
-  { icon: '🎯', title: 'Calificación inteligente', desc: 'La IA detecta modelo, versión, presupuesto y urgencia sin que el lead llene un formulario.' },
-  { icon: '🔄', title: 'Anti-Ghosting Engine', desc: 'Si un vendedor tarda más de 30 min en responder a un lead caliente, el sistema actúa automáticamente.' },
-  { icon: '📈', title: 'Lead Health Score', desc: 'Cada lead recibe un score en tiempo real. Tu equipo solo habla con los top 20%.' },
-  { icon: '🔗', title: 'Integración ERP/CRM', desc: 'Conecta con SAP, Dynamics 365, Pilot y cualquier VMS. Sin pérdida de datos.' },
-  { icon: '📱', title: 'WhatsApp nativo', desc: 'El cliente nunca descarga una app. Todo ocurre dentro de WhatsApp, donde ya está.' },
-  { icon: '👁️', title: 'Visibilidad total del funnel', desc: 'Del primer clic al contrato firmado. Cada dólar de pauta trazado a una venta real.' },
+  { icon: Target, title: 'Calificación inteligente', desc: 'La IA detecta modelo, versión, presupuesto y urgencia sin que el lead llene un formulario.' },
+  { icon: RefreshCw, title: 'Anti-Ghosting Engine', desc: 'Si un vendedor tarda más de 30 min en responder a un lead caliente, el sistema actúa automáticamente.' },
+  { icon: TrendingUp, title: 'Lead Health Score', desc: 'Cada lead recibe un score en tiempo real. Tu equipo solo habla con los top 20%.' },
+  { icon: Link2, title: 'Integración ERP/CRM', desc: 'Conecta con SAP, Dynamics 365, Pilot y cualquier VMS. Sin pérdida de datos.' },
+  { icon: Smartphone, title: 'WhatsApp nativo', desc: 'El cliente nunca descarga una app. Todo ocurre dentro de WhatsApp, donde ya está.' },
+  { icon: Eye, title: 'Visibilidad total del funnel', desc: 'Del primer clic al contrato firmado. Cada dólar de pauta trazado a una venta real.' },
 ];
 
 export default function Producto() {
@@ -92,7 +93,7 @@ export default function Producto() {
             </p>
             <div style={styles.heroCtas} className="hero-producto-ctas">
               <button style={styles.primaryBtn} onClick={() => window.open(WA_URL, '_blank')}>Solicitar demo →</button>
-              <button style={styles.ghostBtn} onClick={() => window.open(WA_URL, '_blank')}>Ver el bot en acción 💬</button>
+              <button style={styles.ghostBtn} onClick={() => window.open(WA_URL, '_blank')}>Ver el bot en acción <MessageCircle size={16} style={{ verticalAlign: 'middle', marginLeft: '4px' }} /></button>
             </div>
           </div>
         </section>
@@ -110,7 +111,7 @@ export default function Producto() {
                 <div key={i} style={{ ...styles.layerCard, borderColor: `${layer.color}30` }}>
                   <div style={{ ...styles.layerTop, background: `${layer.color}15` }}>
                     <span style={styles.layerNum}>{layer.number}</span>
-                    <span style={styles.layerIcon}>{layer.icon}</span>
+                    <layer.icon size={32} color={layer.color} strokeWidth={1.5} />
                   </div>
                   <div style={styles.layerBody}>
                     <h3 style={{ ...styles.layerName, color: layer.color }}>{layer.name}</h3>
@@ -140,7 +141,7 @@ export default function Producto() {
             <div style={styles.chatWrapper} className="chat-layout">
               <div style={styles.chatPhone}>
                 <div style={styles.chatHeader}>
-                  <div style={styles.chatAvatar}>🤖</div>
+                  <div style={styles.chatAvatar}><Bot size={20} color="#a78bfa" strokeWidth={1.5} /></div>
                   <div>
                     <div style={styles.chatName}>Toyota Belgrano · IA</div>
                     <div style={styles.chatOnline}>● En línea</div>
@@ -173,14 +174,14 @@ export default function Producto() {
               <div style={styles.chatSideStats}>
                 <h3 style={styles.chatSideTitle}>Lo que la IA hace en segundo plano</h3>
                 {[
-                  { icon: '🎯', label: 'Modelo detectado', value: 'Hilux SRX 4x4' },
-                  { icon: '💼', label: 'Uso identificado', value: 'Empresarial' },
-                  { icon: '💰', label: 'Presupuesto estimado', value: 'USD 40k–50k' },
-                  { icon: '🔥', label: 'Lead Score', value: '87 / 100' },
-                  { icon: '📋', label: 'Etapa del funnel', value: 'Financiación' },
+                  { icon: Target, label: 'Modelo detectado', value: 'Hilux SRX 4x4' },
+                  { icon: Briefcase, label: 'Uso identificado', value: 'Empresarial' },
+                  { icon: DollarSign, label: 'Presupuesto estimado', value: 'USD 40k–50k' },
+                  { icon: Flame, label: 'Lead Score', value: '87 / 100' },
+                  { icon: ClipboardList, label: 'Etapa del funnel', value: 'Financiación' },
                 ].map((s, i) => (
                   <div key={i} style={styles.sideStatRow}>
-                    <span>{s.icon}</span>
+                    <s.icon size={16} color="#a78bfa" strokeWidth={1.5} />
                     <span style={styles.sideStatLabel}>{s.label}</span>
                     <span style={styles.sideStatValue}>{s.value}</span>
                   </div>
@@ -200,7 +201,7 @@ export default function Producto() {
             <div style={styles.capGrid} className="cap-grid">
               {capabilities.map((c, i) => (
                 <div key={i} style={styles.capCard}>
-                  <div style={styles.capIcon}>{c.icon}</div>
+                  <div style={styles.capIcon}><c.icon size={24} color="#a78bfa" strokeWidth={1.5} /></div>
                   <h3 style={styles.capTitle}>{c.title}</h3>
                   <p style={styles.capDesc}>{c.desc}</p>
                 </div>

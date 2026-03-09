@@ -1,31 +1,32 @@
 import React from 'react';
+import { MessageCircle, Cloud, ShoppingCart, Car, Search, BookOpen, Zap, Key, Target, Diamond, BarChart3, Briefcase, Mail, Plug, Globe } from 'lucide-react';
 
 const row1 = [
-  { name: 'WhatsApp Business', emoji: '💬', color: '#25d366' },
-  { name: 'HubSpot', emoji: '🟠', color: '#ff7a59' },
-  { name: 'Salesforce', emoji: '☁️', color: '#00a1e0' },
-  { name: 'Mercado Libre Autos', emoji: '🛒', color: '#ffe600' },
-  { name: 'OLX Autos', emoji: '🚗', color: '#00a650' },
-  { name: 'Google Ads', emoji: '🔍', color: '#4285f4' },
-  { name: 'Meta Ads', emoji: '📘', color: '#1877f2' },
-  { name: 'Zapier', emoji: '⚡', color: '#ff4a00' },
+  { name: 'WhatsApp Business', icon: MessageCircle, color: '#25d366' },
+  { name: 'HubSpot', icon: Globe, color: '#ff7a59' },
+  { name: 'Salesforce', icon: Cloud, color: '#00a1e0' },
+  { name: 'Mercado Libre Autos', icon: ShoppingCart, color: '#d4b800' },
+  { name: 'OLX Autos', icon: Car, color: '#00a650' },
+  { name: 'Google Ads', icon: Search, color: '#4285f4' },
+  { name: 'Meta Ads', icon: BookOpen, color: '#1877f2' },
+  { name: 'Zapier', icon: Zap, color: '#ff4a00' },
 ];
 
 const row2 = [
-  { name: 'Kavak', emoji: '🔑', color: '#e91e63' },
-  { name: 'Pipedrive', emoji: '🎯', color: '#00b3a4' },
-  { name: 'Zoho CRM', emoji: '🔷', color: '#e42527' },
-  { name: 'Google Analytics', emoji: '📊', color: '#e37400' },
-  { name: 'Slack', emoji: '💼', color: '#4a154b' },
-  { name: 'ActiveCampaign', emoji: '✉️', color: '#356ae6' },
-  { name: 'Autocosmos', emoji: '🏎️', color: '#c0392b' },
-  { name: 'iCarros', emoji: '🚙', color: '#2980b9' },
+  { name: 'Kavak', icon: Key, color: '#e91e63' },
+  { name: 'Pipedrive', icon: Target, color: '#00b3a4' },
+  { name: 'Zoho CRM', icon: Diamond, color: '#e42527' },
+  { name: 'Google Analytics', icon: BarChart3, color: '#e37400' },
+  { name: 'Slack', icon: Briefcase, color: '#4a154b' },
+  { name: 'ActiveCampaign', icon: Mail, color: '#356ae6' },
+  { name: 'Autocosmos', icon: Car, color: '#c0392b' },
+  { name: 'iCarros', icon: Plug, color: '#2980b9' },
 ];
 
-function IntegrationChip({ name, emoji }) {
+function IntegrationChip({ name, icon: Icon, color }) {
   return (
     <div style={styles.chip}>
-      <span style={styles.chipEmoji}>{emoji}</span>
+      <Icon size={16} color={color} strokeWidth={1.5} />
       <span style={styles.chipName}>{name}</span>
     </div>
   );
@@ -52,13 +53,13 @@ export default function Integrations() {
         <div style={styles.fadeRight} />
         <div style={styles.marqueeTrack}>
           <div style={{ ...styles.marqueeRow, animation: 'marquee 28s linear infinite' }}>
-            {[...row1, ...row1].map((int, i) => <IntegrationChip key={i} {...int} />)}
+            {[...row1, ...row1].map((int, i) => <IntegrationChip key={i} name={int.name} icon={int.icon} color={int.color} />)}
           </div>
         </div>
         <div style={{ marginTop: '1rem' }}>
           <div style={styles.marqueeTrack}>
             <div style={{ ...styles.marqueeRow, animation: 'marqueeReverse 28s linear infinite' }}>
-              {[...row2, ...row2].map((int, i) => <IntegrationChip key={i} {...int} />)}
+              {[...row2, ...row2].map((int, i) => <IntegrationChip key={i} name={int.name} icon={int.icon} color={int.color} />)}
             </div>
           </div>
         </div>

@@ -1,10 +1,11 @@
 import React from 'react';
+import { Car, RefreshCw, BarChart3 } from 'lucide-react';
 
 const WA_URL = 'https://wa.me/19205414464';
 
 const features = [
   {
-    icon: '🚗',
+    icon: Car,
     title: 'Calificación de compradores de autos',
     description:
       'La IA detecta el modelo, presupuesto, financiación y urgencia de cada prospecto en tiempo real. Solo los leads listos para comprar llegan a tu equipo de ventas.',
@@ -12,7 +13,7 @@ const features = [
     color: '#6D2EFF',
   },
   {
-    icon: '🔄',
+    icon: RefreshCw,
     title: 'Seguimiento automatizado',
     description:
       'Recordatorios de test drive, seguimiento post-visita y reactivación de leads fríos por WhatsApp. Sin trabajo manual para el vendedor.',
@@ -20,7 +21,7 @@ const features = [
     color: '#FF6A00',
   },
   {
-    icon: '📊',
+    icon: BarChart3,
     title: 'Atribución automotriz',
     description:
       'Conecta tus portales (Mercado Libre Autos, OLX, Kavak), Meta Ads y Google. Sabe exactamente qué fuente genera los mejores compradores.',
@@ -61,7 +62,7 @@ export default function Features() {
               }}
             >
               <div style={{ ...styles.iconBox, background: `${feat.color}18`, border: `1px solid ${feat.color}30` }}>
-                <span style={styles.icon}>{feat.icon}</span>
+                <feat.icon size={26} color={feat.color} strokeWidth={1.5} />
               </div>
               <span style={{ ...styles.tag, color: feat.color, background: `${feat.color}15` }}>
                 {feat.tag}

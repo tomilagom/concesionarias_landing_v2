@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Footer from '../components/Footer';
+import { Users, Car, Gift } from 'lucide-react';
 
 const WA_URL = 'https://wa.me/19205414464';
 
@@ -309,12 +310,12 @@ export default function Precios() {
             </div>
             <div style={styles.mathGrid} className="math-grid">
               {[
-                { title: 'vs. BDC Humano', icon: '👥', lines: ['4–5 calificadores humanos = ~$4,000/mes', 'Plan Platinum = $750 base + $500 extra leads', 'Ahorro mensual: ~$2,750 USD', '100% trazabilidad incluida'] },
-                { title: 'El ROI de 1 auto', icon: '🚗', lines: ['Ganancia bruta promedio por auto: $1,500–$2,500', 'Plan Gold: $750/mes', 'Con 1 auto adicional = sistema pagado', 'ConcesionarIA reduce leakage ~25%'] },
-                { title: 'Descuento Early Adopter', icon: '🎁', lines: ['50% off en la implementación', 'Para las primeras 10 concesionarias en Argentina', 'Gold: $750 → $375 (implementación)', 'Platinum: $3,500 → $1,750 (implementación)'] },
+                { title: 'vs. BDC Humano', icon: Users, lines: ['4–5 calificadores humanos = ~$4,000/mes', 'Plan Platinum = $750 base + $500 extra leads', 'Ahorro mensual: ~$2,750 USD', '100% trazabilidad incluida'] },
+                { title: 'El ROI de 1 auto', icon: Car, lines: ['Ganancia bruta promedio por auto: $1,500–$2,500', 'Plan Gold: $750/mes', 'Con 1 auto adicional = sistema pagado', 'ConcesionarIA reduce leakage ~25%'] },
+                { title: 'Descuento Early Adopter', icon: Gift, lines: ['50% off en la implementación', 'Para las primeras 10 concesionarias en Argentina', 'Gold: $750 → $375 (implementación)', 'Platinum: $3,500 → $1,750 (implementación)'] },
               ].map((m, i) => (
                 <div key={i} style={styles.mathCard}>
-                  <div style={styles.mathIcon}>{m.icon}</div>
+                  <div style={styles.mathIcon}><m.icon size={28} color="#6D2EFF" strokeWidth={1.5} /></div>
                   <h3 style={styles.mathTitle}>{m.title}</h3>
                   <ul style={styles.mathList}>
                     {m.lines.map((l, j) => (

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { MessageCircle, CalendarDays, CheckCircle2, Lock, User } from 'lucide-react';
 
 const WA_URL       = 'https://wa.me/19205414464';
 const CALENDAR_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ067UkjUd-FJOJtfEuLXOIvkKlqRgA0RT2ICqIQDtbgLmA-9loCHaDfBFh3MdY1h0XEeRyQ0dBc?gv=true';
@@ -196,7 +197,7 @@ function ContactForm() {
         {/* ── STEP 3 — success / calendar ── */}
         {step === 3 && !showCal && (
           <div style={f.success}>
-            <div style={f.successIcon}>✅</div>
+            <div style={f.successIcon}><CheckCircle2 size={40} color="#10b981" strokeWidth={1.5} /></div>
             <p style={f.successTitle}>¡Consulta recibida!</p>
             <p style={f.successDesc}>
               Nos pondremos en contacto con <strong style={{ color: '#fff' }}>{f1.nombre}</strong> en menos de 24 horas hábiles.
@@ -206,13 +207,13 @@ function ContactForm() {
                 style={f.waBtn}
                 onClick={() => window.open(WA_URL, '_blank')}
               >
-                <span>💬</span> Contactar con ventas
+                <MessageCircle size={16} /> Contactar con ventas
               </button>
               <button
                 style={f.calBtn}
                 onClick={() => setShowCal(true)}
               >
-                <span>📅</span> Agendar una cita
+                <CalendarDays size={16} /> Agendar una cita
               </button>
             </div>
           </div>
@@ -235,7 +236,7 @@ function ContactForm() {
       {/* Trust strip */}
       {step < 3 && (
         <div style={f.trust}>
-          🔒 Tus datos están seguros · Sin spam · Sin compromiso
+          <Lock size={11} style={{ verticalAlign: 'middle', marginRight: '4px' }} />Tus datos están seguros · Sin spam · Sin compromiso
         </div>
       )}
     </div>
@@ -307,8 +308,10 @@ export default function Hero() {
           {/* Social proof */}
           <div style={s.proof} className="hero-social-proof">
             <div style={s.avatars}>
-              {['🧑‍💼', '👩‍💼', '🧑‍💻', '👩‍💻'].map((e, i) => (
-                <div key={i} style={{ ...s.avatar, left: `${i * 22}px`, zIndex: 4 - i }}>{e}</div>
+              {[0, 1, 2, 3].map((i) => (
+                <div key={i} style={{ ...s.avatar, left: `${i * 22}px`, zIndex: 4 - i }}>
+                  <User size={18} color="#a78bfa" strokeWidth={1.5} />
+                </div>
               ))}
             </div>
             <p style={s.proofText}>

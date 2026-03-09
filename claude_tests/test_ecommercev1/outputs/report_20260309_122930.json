@@ -1,0 +1,1092 @@
+{
+  "meta": {
+    "generated_at": "2026-03-09T12:29:30.871231",
+    "mode": "demo",
+    "total_customers": 500
+  },
+  "segment_summary": {
+    "At_Risk": {
+      "customer_count": 126,
+      "avg_recency_days": 118.38888888888889,
+      "avg_frequency": 6.801587301587301,
+      "avg_monetary": 613.7557936507935
+    },
+    "Champion": {
+      "customer_count": 86,
+      "avg_recency_days": 9.36046511627907,
+      "avg_frequency": 9.720930232558139,
+      "avg_monetary": 957.7210465116281
+    },
+    "Lost": {
+      "customer_count": 77,
+      "avg_recency_days": 227.8181818181818,
+      "avg_frequency": 1.7272727272727273,
+      "avg_monetary": 152.29545454545453
+    },
+    "Loyal": {
+      "customer_count": 106,
+      "avg_recency_days": 22.4811320754717,
+      "avg_frequency": 7.773584905660377,
+      "avg_monetary": 679.0965094339622
+    },
+    "Others": {
+      "customer_count": 3,
+      "avg_recency_days": 15.0,
+      "avg_frequency": 8.0,
+      "avg_monetary": 386.4433333333333
+    },
+    "Potential_Loyal": {
+      "customer_count": 102,
+      "avg_recency_days": 20.970588235294116,
+      "avg_frequency": 3.607843137254902,
+      "avg_monetary": 280.8591176470589
+    }
+  },
+  "recommendations": {
+    "segment_priorities": [
+      {
+        "segment": "Champion",
+        "customer_count": 86,
+        "total_clv": 197464.9,
+        "avg_clv": 2296.1,
+        "urgency": "normal",
+        "priority_score": 296197.35
+      },
+      {
+        "segment": "Loyal",
+        "customer_count": 106,
+        "total_clv": 161705.62,
+        "avg_clv": 1525.52,
+        "urgency": "normal",
+        "priority_score": 210217.306
+      },
+      {
+        "segment": "At_Risk",
+        "customer_count": 126,
+        "total_clv": 143163.91,
+        "avg_clv": 1136.22,
+        "urgency": "high",
+        "priority_score": 200429.474
+      },
+      {
+        "segment": "Potential_Loyal",
+        "customer_count": 102,
+        "total_clv": 84249.85,
+        "avg_clv": 896.27,
+        "urgency": "medium",
+        "priority_score": 92674.83500000002
+      },
+      {
+        "segment": "Lost",
+        "customer_count": 77,
+        "total_clv": 20959.18,
+        "avg_clv": 476.35,
+        "urgency": "high",
+        "priority_score": 16767.344
+      },
+      {
+        "segment": "Others",
+        "customer_count": 3,
+        "total_clv": 2131.82,
+        "avg_clv": 710.61,
+        "urgency": "normal",
+        "priority_score": 1065.91
+      }
+    ],
+    "by_segment": {
+      "Champion": {
+        "metrics": {
+          "customer_count": 86,
+          "avg_clv": 2296.1,
+          "total_clv": 197464.9,
+          "avg_monetary": 957.72,
+          "avg_frequency": 9.72,
+          "avg_recency_days": 9.4,
+          "avg_order_value": 957.72
+        },
+        "email": {
+          "strategy": "VIP Reward & Referral",
+          "objective": "Deepen loyalty, leverage brand advocacy, increase referral revenue.",
+          "email_sequence": [
+            {
+              "step": 1,
+              "trigger": "Segment entry / monthly",
+              "subject_examples": [
+                "You're one of our VIPs \u2014 here's your exclusive access \ud83c\udf81",
+                "Early access: [New collection] drops tomorrow \u2014 just for you"
+              ],
+              "body_focus": "VIP badge reveal, early access to new products/sales.",
+              "cta": "Shop Early Access"
+            },
+            {
+              "step": 2,
+              "trigger": "7 days after step 1",
+              "subject_examples": [
+                "Share the love \u2014 earn [X]\u20ac for every friend you refer",
+                "Your friends deserve [Brand] too \u2014 give them 15% off"
+              ],
+              "body_focus": "Referral program introduction with dual-sided incentive.",
+              "cta": "Share My Referral Link"
+            },
+            {
+              "step": 3,
+              "trigger": "On loyalty milestone (e.g. 10th order)",
+              "subject_examples": [
+                "Congratulations on your 10th order \u2014 a gift from us",
+                "You've unlocked Gold status \u2014 here's what that means"
+              ],
+              "body_focus": "Loyalty milestone celebration, gift or upgrade reveal.",
+              "cta": "Claim Your Reward"
+            }
+          ],
+          "send_frequency": "2\u20133x per month",
+          "optimal_timing": "Tuesday\u2013Thursday, 10:00\u201312:00 local time",
+          "personalisation": [
+            "First name in subject line",
+            "Show their favourite product category",
+            "Display loyalty points / tier status"
+          ],
+          "avoid": "Discounts \u2014 Champions buy without them; discounting trains them to wait.",
+          "customer_io_tags": [
+            "champion",
+            "vip",
+            "referral-eligible"
+          ],
+          "kpi_targets": {
+            "open_rate": ">35%",
+            "ctr": ">5%",
+            "unsubscribe": "<0.1%"
+          },
+          "segment": "Champion"
+        },
+        "whatsapp": {
+          "strategy": "VIP Concierge + Cart Recovery",
+          "objective": "Deliver premium, personalised service and recover abandoned carts fast.",
+          "flows": [
+            {
+              "flow": "Order Confirmation & Shipping",
+              "trigger": "order_placed event",
+              "message_type": "transactional",
+              "template": "Hi {{first_name}}, your [Brand] order #{{order_id}} is confirmed! We'll message you when it ships. Thank you for being a VIP customer \ud83c\udf1f",
+              "notes": "Send immediately after order. No opt-in required for transactional."
+            },
+            {
+              "flow": "Shipping Update",
+              "trigger": "shipment_dispatched event",
+              "message_type": "transactional",
+              "template": "Great news, {{first_name}}! Your order #{{order_id}} is on its way. Track it here: {{tracking_url}}",
+              "notes": "Include live tracking link. Keep under 160 chars for readability."
+            },
+            {
+              "flow": "Cart Abandonment Recovery",
+              "trigger": "60 minutes after cart_abandoned event",
+              "message_type": "promotional",
+              "template": "Hey {{first_name}}, you left something behind! Your cart has {{cart_item_count}} item(s) ready. Complete your purchase: {{cart_url}}\n\nAs a VIP, we've held your items for 24 hours. \ud83d\udd12",
+              "notes": "Opt-in required. Maximum 1 message per abandoned cart."
+            },
+            {
+              "flow": "Flash Sale \u2014 VIP Early Access",
+              "trigger": "24 hours before sale goes public",
+              "message_type": "promotional",
+              "template": "{{first_name}}, your VIP early access starts NOW! Get {{discount_pct}}% off before anyone else: {{sale_url}} Offer ends in 24 hours. \u26a1",
+              "notes": "High urgency. Send once only. Do not resend."
+            }
+          ],
+          "opt_in_recommendation": "Request WhatsApp opt-in at checkout (pre-ticked for VIPs).",
+          "frequency_cap": "Max 4 promotional messages per month.",
+          "frequency_note": "Transactional messages are uncapped.",
+          "customer_io_tags": [
+            "champion",
+            "wa-vip"
+          ],
+          "kpi_targets": {
+            "read_rate": ">70%",
+            "response_rate": ">8%",
+            "opt_out": "<0.5%"
+          },
+          "segment": "Champion"
+        },
+        "promotions": {
+          "strategy": "Exclusivity Over Discounts",
+          "rationale": "Champions buy at full price; discounting devalues the brand in their eyes and trains price-sensitivity. Focus on non-monetary perks.",
+          "promotions": [
+            {
+              "name": "VIP Early Access",
+              "type": "access",
+              "discount_pct": 0,
+              "benefit": "Access to new collection 24-48h before general public",
+              "frequency": "Every new collection / major launch",
+              "max_per_year": 6
+            },
+            {
+              "name": "Complimentary Gift with Purchase",
+              "type": "gift",
+              "discount_pct": 0,
+              "benefit": "Free branded gift on orders above average order value",
+              "frequency": "Quarterly",
+              "max_per_year": 4
+            },
+            {
+              "name": "Loyalty Tier Upgrade",
+              "type": "status",
+              "discount_pct": 0,
+              "benefit": "Fast-track to Gold/Platinum tier with free shipping + priority support",
+              "frequency": "Annual",
+              "max_per_year": 1
+            }
+          ],
+          "avoid": "Percentage discounts and flash sales visible to this segment.",
+          "expected_margin_impact": "Neutral to positive \u2014 loyalty deepens without margin erosion.",
+          "segment": "Champion",
+          "roi_projections": [
+            {
+              "promotion": "VIP Early Access",
+              "discount_pct": 0,
+              "expected_converters": 22,
+              "gross_revenue_est": 20590.98,
+              "discount_cost_est": 0.0,
+              "net_revenue_est": 20590.98,
+              "roi_pct": "N/A (no discount)"
+            },
+            {
+              "promotion": "Complimentary Gift with Purchase",
+              "discount_pct": 0,
+              "expected_converters": 22,
+              "gross_revenue_est": 20590.98,
+              "discount_cost_est": 0.0,
+              "net_revenue_est": 20590.98,
+              "roi_pct": "N/A (no discount)"
+            },
+            {
+              "promotion": "Loyalty Tier Upgrade",
+              "discount_pct": 0,
+              "expected_converters": 22,
+              "gross_revenue_est": 20590.98,
+              "discount_cost_est": 0.0,
+              "net_revenue_est": 20590.98,
+              "roi_pct": "N/A (no discount)"
+            }
+          ]
+        }
+      },
+      "Loyal": {
+        "metrics": {
+          "customer_count": 106,
+          "avg_clv": 1525.52,
+          "total_clv": 161705.62,
+          "avg_monetary": 679.1,
+          "avg_frequency": 7.77,
+          "avg_recency_days": 22.5,
+          "avg_order_value": 679.1
+        },
+        "email": {
+          "strategy": "Cross-sell & Upsell Nurture",
+          "objective": "Increase basket size and introduce premium product lines.",
+          "email_sequence": [
+            {
+              "step": 1,
+              "trigger": "7 days after last purchase",
+              "subject_examples": [
+                "Since you loved [Product], you'll want to see this",
+                "Complete your collection \u2014 items that go perfectly with your last order"
+              ],
+              "body_focus": "Curated cross-sell recommendations based on purchase history.",
+              "cta": "Shop Recommendations"
+            },
+            {
+              "step": 2,
+              "trigger": "30 days after last purchase",
+              "subject_examples": [
+                "Level up: our premium [Category] range is here",
+                "You've tried the good \u2014 here's the best"
+              ],
+              "body_focus": "Upsell to premium tier with quality/benefit comparison.",
+              "cta": "Explore Premium Range"
+            },
+            {
+              "step": 3,
+              "trigger": "On loyalty milestone",
+              "subject_examples": [
+                "Loyal customers get 12% off \u2014 because you've earned it",
+                "A little thank-you: free shipping on your next order"
+              ],
+              "body_focus": "Modest loyalty reward (10-15% discount or free shipping).",
+              "cta": "Shop With Discount"
+            }
+          ],
+          "send_frequency": "1\u20132x per month",
+          "optimal_timing": "Wednesday\u2013Thursday, 09:00\u201311:00 local time",
+          "personalisation": [
+            "Product recommendations by category",
+            "Order count milestone acknowledgement"
+          ],
+          "avoid": "Deep discounts \u2014 erodes margin with already-buying customers.",
+          "customer_io_tags": [
+            "loyal",
+            "upsell-candidate"
+          ],
+          "kpi_targets": {
+            "open_rate": ">28%",
+            "ctr": ">4%",
+            "unsubscribe": "<0.2%"
+          },
+          "segment": "Loyal"
+        },
+        "whatsapp": {
+          "strategy": "Restock Alerts + Cart Recovery",
+          "objective": "Keep loyal buyers informed of relevant restocks and recover lost revenue.",
+          "flows": [
+            {
+              "flow": "Order Confirmation & Shipping",
+              "trigger": "order_placed event",
+              "message_type": "transactional",
+              "template": "Hi {{first_name}}, order #{{order_id}} confirmed! Expected delivery: {{delivery_estimate}}. We'll update you when it ships.",
+              "notes": "Standard transactional flow."
+            },
+            {
+              "flow": "Back-in-Stock Alert",
+              "trigger": "product_restocked event (for previously purchased product)",
+              "message_type": "promotional",
+              "template": "{{first_name}}, great news! {{product_name}} is back in stock. You bought it before \u2014 grab yours again: {{product_url}}",
+              "notes": "Only send if customer purchased this product previously. Max 1/product."
+            },
+            {
+              "flow": "Cart Abandonment",
+              "trigger": "90 minutes after cart_abandoned",
+              "message_type": "promotional",
+              "template": "Hi {{first_name}}, you left {{cart_item_count}} item(s) in your cart. Ready to complete your order? {{cart_url}}",
+              "notes": "Simple recovery \u2014 no discount on first attempt for Loyal segment."
+            }
+          ],
+          "opt_in_recommendation": "Request opt-in post-purchase via thank-you page.",
+          "frequency_cap": "Max 3 promotional messages per month.",
+          "frequency_note": "Monitor read rate; pause if below 40%.",
+          "customer_io_tags": [
+            "loyal",
+            "wa-restock"
+          ],
+          "kpi_targets": {
+            "read_rate": ">60%",
+            "response_rate": ">5%",
+            "opt_out": "<1%"
+          },
+          "segment": "Loyal"
+        },
+        "promotions": {
+          "strategy": "Modest Loyalty Reward",
+          "rationale": "Loyal customers deserve recognition but do not yet require heavy discounts. 10-15% keeps margins healthy while rewarding continued engagement.",
+          "promotions": [
+            {
+              "name": "Loyalty Appreciation Discount",
+              "type": "percentage",
+              "discount_pct": 12,
+              "benefit": "12% off sitewide as a thank-you for loyalty",
+              "frequency": "Quarterly",
+              "max_per_year": 4,
+              "coupon_type": "single-use"
+            },
+            {
+              "name": "Free Shipping Upgrade",
+              "type": "shipping",
+              "discount_pct": 0,
+              "benefit": "Free express shipping on all orders for 30 days",
+              "frequency": "Semi-annual",
+              "max_per_year": 2
+            },
+            {
+              "name": "Category Sale Access",
+              "type": "category_discount",
+              "discount_pct": 15,
+              "benefit": "15% off their most purchased category",
+              "frequency": "Quarterly",
+              "max_per_year": 4,
+              "targeting": "personalised by top_category"
+            }
+          ],
+          "avoid": "Deep 30%+ discounts \u2014 Loyal customers don't need them.",
+          "expected_margin_impact": "Modest margin reduction (est. -2 to -4 margin points) offset by increased order frequency.",
+          "segment": "Loyal",
+          "roi_projections": [
+            {
+              "promotion": "Loyalty Appreciation Discount",
+              "discount_pct": 12,
+              "expected_converters": 21,
+              "gross_revenue_est": 14396.92,
+              "discount_cost_est": 1727.63,
+              "net_revenue_est": 12669.29,
+              "roi_pct": 733.3
+            },
+            {
+              "promotion": "Free Shipping Upgrade",
+              "discount_pct": 0,
+              "expected_converters": 21,
+              "gross_revenue_est": 14396.92,
+              "discount_cost_est": 0.0,
+              "net_revenue_est": 14396.92,
+              "roi_pct": "N/A (no discount)"
+            },
+            {
+              "promotion": "Category Sale Access",
+              "discount_pct": 15,
+              "expected_converters": 21,
+              "gross_revenue_est": 14396.92,
+              "discount_cost_est": 2159.54,
+              "net_revenue_est": 12237.38,
+              "roi_pct": 566.7
+            }
+          ]
+        }
+      },
+      "At_Risk": {
+        "metrics": {
+          "customer_count": 126,
+          "avg_clv": 1136.22,
+          "total_clv": 143163.91,
+          "avg_monetary": 613.76,
+          "avg_frequency": 6.8,
+          "avg_recency_days": 118.4,
+          "avg_order_value": 613.76
+        },
+        "email": {
+          "strategy": "Win-Back Sequence (3-Email Flow)",
+          "objective": "Re-engage lapsing customers before they churn completely.",
+          "email_sequence": [
+            {
+              "step": 1,
+              "trigger": "45\u201360 days since last purchase",
+              "subject_examples": [
+                "We miss you, [First Name] \u2014 look what's new",
+                "It's been a while\u2026 here's what you've been missing"
+              ],
+              "body_focus": "Soft re-engagement \u2014 new arrivals or restocks in their category.",
+              "cta": "See What's New"
+            },
+            {
+              "step": 2,
+              "trigger": "10 days after step 1 (no purchase)",
+              "subject_examples": [
+                "Come back \u2014 20% off, just for you",
+                "[First Name], we have something special: 20% off expires in 72 hours"
+              ],
+              "body_focus": "Urgency discount offer (20-25%) with clear expiry.",
+              "cta": "Claim 20% Off"
+            },
+            {
+              "step": 3,
+              "trigger": "7 days after step 2 (no purchase)",
+              "subject_examples": [
+                "Last chance: your 25% off expires tonight",
+                "We don't want to lose you \u2014 one final offer"
+              ],
+              "body_focus": "Final urgency + escalated discount (25%). Acknowledge absence.",
+              "cta": "Shop Before Offer Expires"
+            }
+          ],
+          "send_frequency": "3 emails over 17 days, then pause",
+          "optimal_timing": "Tuesday, 10:00\u201312:00 local time (highest re-engagement rates)",
+          "personalisation": [
+            "Last purchased product",
+            "Time since last order",
+            "Personalised discount code"
+          ],
+          "avoid": "Sending more than 3 win-back emails \u2014 it signals desperation.",
+          "customer_io_tags": [
+            "at-risk",
+            "win-back"
+          ],
+          "kpi_targets": {
+            "open_rate": ">18%",
+            "ctr": ">2.5%",
+            "unsubscribe": "<0.5%"
+          },
+          "segment": "At_Risk"
+        },
+        "whatsapp": {
+          "strategy": "Win-Back via WhatsApp",
+          "objective": "High-visibility re-engagement complementing the email win-back flow.",
+          "flows": [
+            {
+              "flow": "Soft Re-engagement",
+              "trigger": "50 days since last purchase",
+              "message_type": "promotional",
+              "template": "Hi {{first_name}}, it's been a while \u2014 we miss you! Here's what's new at [Brand]: {{shop_url}} \ud83d\udc40",
+              "notes": "Send once. Do not follow up immediately on WhatsApp."
+            },
+            {
+              "flow": "Discount Win-Back",
+              "trigger": "7 days after soft re-engagement (if no purchase)",
+              "message_type": "promotional",
+              "template": "{{first_name}}, we want you back! Use code {{coupon_code}} for 20% off \u2014 expires in 48 hours. Shop: {{shop_url}} \u23f0",
+              "notes": "Final WhatsApp message in this sequence. Suppress after if no response."
+            }
+          ],
+          "opt_in_recommendation": "Only message customers who previously opted in.",
+          "frequency_cap": "Max 2 win-back messages. Do not exceed.",
+          "frequency_note": "Coordinate timing with email win-back: send WhatsApp 2 days after email to reinforce.",
+          "customer_io_tags": [
+            "at-risk",
+            "wa-winback"
+          ],
+          "kpi_targets": {
+            "read_rate": ">40%",
+            "response_rate": ">2%",
+            "opt_out": "<2%"
+          },
+          "segment": "At_Risk"
+        },
+        "promotions": {
+          "strategy": "Urgency-Driven Win-Back Discount",
+          "rationale": "Customers are drifting and need a compelling reason to return. 20-25% with a tight expiry creates urgency without feeling desperate.",
+          "promotions": [
+            {
+              "name": "Win-Back Offer \u2014 Step 1",
+              "type": "percentage",
+              "discount_pct": 20,
+              "benefit": "20% off sitewide \u2014 time-limited (72 hours)",
+              "frequency": "Triggered at 45-60 days since last order",
+              "max_per_year": 1,
+              "expiry_days": 3
+            },
+            {
+              "name": "Win-Back Offer \u2014 Step 2 (Escalated)",
+              "type": "percentage",
+              "discount_pct": 25,
+              "benefit": "25% off \u2014 final offer (48 hours)",
+              "frequency": "7 days after Step 1 if no purchase",
+              "max_per_year": 1,
+              "expiry_days": 2
+            }
+          ],
+          "avoid": "Offering discounts indefinitely without an expiry \u2014 no urgency created.",
+          "expected_margin_impact": "Significant margin hit (~20-25 points) but necessary to recover otherwise lost revenue. ROI positive if \u226510% of at-risk customers convert.",
+          "segment": "At_Risk",
+          "roi_projections": [
+            {
+              "promotion": "Win-Back Offer \u2014 Step 1",
+              "discount_pct": 20,
+              "expected_converters": 13,
+              "gross_revenue_est": 7733.38,
+              "discount_cost_est": 1546.68,
+              "net_revenue_est": 6186.7,
+              "roi_pct": 400.0
+            },
+            {
+              "promotion": "Win-Back Offer \u2014 Step 2 (Escalated)",
+              "discount_pct": 25,
+              "expected_converters": 13,
+              "gross_revenue_est": 7733.38,
+              "discount_cost_est": 1933.34,
+              "net_revenue_est": 5800.03,
+              "roi_pct": 300.0
+            }
+          ]
+        }
+      },
+      "Potential_Loyal": {
+        "metrics": {
+          "customer_count": 102,
+          "avg_clv": 896.27,
+          "total_clv": 84249.85,
+          "avg_monetary": 280.86,
+          "avg_frequency": 3.61,
+          "avg_recency_days": 21.0,
+          "avg_order_value": 280.86
+        },
+        "email": {
+          "strategy": "Second Purchase Incentive & Social Proof",
+          "objective": "Convert single or infrequent buyers into habitual purchasers.",
+          "email_sequence": [
+            {
+              "step": 1,
+              "trigger": "3 days after first/last purchase",
+              "subject_examples": [
+                "How did you enjoy your [Product]? Here's what others got next",
+                "People who bought [Product] also loved these"
+              ],
+              "body_focus": "Social proof (reviews, bestsellers) + related products.",
+              "cta": "See What Others Are Buying"
+            },
+            {
+              "step": 2,
+              "trigger": "10 days after step 1 (no second purchase)",
+              "subject_examples": [
+                "10% off your next order \u2014 just for coming back",
+                "We saved something for you: 10% off expires in 48 hours"
+              ],
+              "body_focus": "Light discount to nudge second purchase.",
+              "cta": "Shop Now \u2014 10% Off"
+            },
+            {
+              "step": 3,
+              "trigger": "21 days after step 1 (no second purchase)",
+              "subject_examples": [
+                "[Brand] members save more \u2014 here's why loyal customers love us",
+                "What happens when you order twice from [Brand]"
+              ],
+              "body_focus": "Benefits of continued purchasing (loyalty perks, convenience).",
+              "cta": "Discover Loyalty Benefits"
+            }
+          ],
+          "send_frequency": "Weekly during onboarding (first 30 days)",
+          "optimal_timing": "Monday\u2013Wednesday, 10:00\u201313:00 local time",
+          "personalisation": [
+            "First name",
+            "Purchased product image",
+            "Category affinity"
+          ],
+          "avoid": "Overwhelming with too many emails too quickly.",
+          "customer_io_tags": [
+            "potential-loyal",
+            "second-purchase-nurture"
+          ],
+          "kpi_targets": {
+            "open_rate": ">22%",
+            "ctr": ">3%",
+            "unsubscribe": "<0.3%"
+          },
+          "segment": "Potential_Loyal"
+        },
+        "whatsapp": {
+          "strategy": "Second Purchase Nudge",
+          "objective": "Use WhatsApp as a high-visibility channel to drive the second purchase.",
+          "flows": [
+            {
+              "flow": "Order Confirmation",
+              "trigger": "order_placed event",
+              "message_type": "transactional",
+              "template": "Hi {{first_name}}, your order is confirmed! \ud83c\udf89 Order #{{order_id}} \u2014 expected by {{delivery_estimate}}.",
+              "notes": "Transactional \u2014 always send."
+            },
+            {
+              "flow": "Second Purchase Incentive",
+              "trigger": "14 days after first purchase (no second order)",
+              "message_type": "promotional",
+              "template": "Hey {{first_name}}! Hope you're loving your {{product_name}}. We'd love to see you again \u2014 here's 10% off your next order: {{coupon_code}} Valid for 7 days. Shop now: {{shop_url}}",
+              "notes": "Pair with email campaign for maximum reach."
+            }
+          ],
+          "opt_in_recommendation": "Offer WhatsApp updates as an upgrade during checkout.",
+          "frequency_cap": "Max 2 promotional messages in first 30 days.",
+          "frequency_note": "Do not send if email is being received and engaged with.",
+          "customer_io_tags": [
+            "potential-loyal",
+            "wa-nurture"
+          ],
+          "kpi_targets": {
+            "read_rate": ">55%",
+            "response_rate": ">3%",
+            "opt_out": "<1.5%"
+          },
+          "segment": "Potential_Loyal"
+        },
+        "promotions": {
+          "strategy": "Second Purchase Incentive",
+          "rationale": "Getting a customer to buy twice is the biggest conversion lever in ecommerce. A 10% offer is economically justified by the long-term CLV gain.",
+          "promotions": [
+            {
+              "name": "Second Purchase Coupon",
+              "type": "percentage",
+              "discount_pct": 10,
+              "benefit": "10% off second order, auto-applied or code-based",
+              "frequency": "One-time, sent 7-14 days after first order",
+              "max_per_year": 1,
+              "expiry_days": 14
+            },
+            {
+              "name": "Bundle Deal",
+              "type": "bundle",
+              "discount_pct": 10,
+              "benefit": "Buy 2, get 10% off \u2014 encourages higher basket size",
+              "frequency": "Triggered when browsing 2+ products",
+              "max_per_year": 4
+            }
+          ],
+          "avoid": "Deep discounts before demonstrating product value.",
+          "expected_margin_impact": "Short-term margin reduction offset by lifetime value increase for customers who become Loyal.",
+          "segment": "Potential_Loyal",
+          "roi_projections": [
+            {
+              "promotion": "Second Purchase Coupon",
+              "discount_pct": 10,
+              "expected_converters": 15,
+              "gross_revenue_est": 4297.16,
+              "discount_cost_est": 429.72,
+              "net_revenue_est": 3867.44,
+              "roi_pct": 900.0
+            },
+            {
+              "promotion": "Bundle Deal",
+              "discount_pct": 10,
+              "expected_converters": 15,
+              "gross_revenue_est": 4297.16,
+              "discount_cost_est": 429.72,
+              "net_revenue_est": 3867.44,
+              "roi_pct": 900.0
+            }
+          ]
+        }
+      },
+      "Lost": {
+        "metrics": {
+          "customer_count": 77,
+          "avg_clv": 476.35,
+          "total_clv": 20959.18,
+          "avg_monetary": 152.3,
+          "avg_frequency": 1.73,
+          "avg_recency_days": 227.8,
+          "avg_order_value": 152.3
+        },
+        "email": {
+          "strategy": "Last-Chance Reactivation + Feedback",
+          "objective": "Recover a small percentage of churned customers; understand why others left.",
+          "email_sequence": [
+            {
+              "step": 1,
+              "trigger": "90+ days since last purchase",
+              "subject_examples": [
+                "We want you back \u2014 30% off, no strings attached",
+                "[First Name], we're offering our biggest discount ever: 30% off"
+              ],
+              "body_focus": "Generous reactivation offer (30%) with free returns.",
+              "cta": "Come Back \u2014 30% Off"
+            },
+            {
+              "step": 2,
+              "trigger": "14 days after step 1 (no purchase)",
+              "subject_examples": [
+                "Before you go \u2014 would you tell us why?",
+                "Quick question: what could [Brand] do better?"
+              ],
+              "body_focus": "Feedback survey (3 questions max). Offer small gift for completing.",
+              "cta": "Share Your Feedback"
+            }
+          ],
+          "send_frequency": "2 emails maximum, then suppress",
+          "optimal_timing": "Wednesday, 11:00 local time",
+          "personalisation": [
+            "First name",
+            "Last purchased category",
+            "Tenure acknowledgement"
+          ],
+          "avoid": "Continuing to email after no response \u2014 move to suppression list to protect sender reputation.",
+          "customer_io_tags": [
+            "lost",
+            "reactivation",
+            "suppression-candidate"
+          ],
+          "kpi_targets": {
+            "open_rate": ">12%",
+            "ctr": ">1.5%",
+            "unsubscribe": "<1.0%"
+          },
+          "segment": "Lost"
+        },
+        "whatsapp": {
+          "strategy": "Final Reactivation Attempt",
+          "objective": "One last high-value offer via WhatsApp to recover churned customers.",
+          "flows": [
+            {
+              "flow": "Reactivation Offer",
+              "trigger": "90+ days since last purchase",
+              "message_type": "promotional",
+              "template": "Hi {{first_name}}, we haven't seen you in a while and we want to fix that. Here's our best offer: 30% off + free returns. Code: {{coupon_code}} | Shop: {{shop_url}}\nOffer expires in 72 hours.",
+              "notes": "Send only once. If no response, suppress from all WhatsApp communications and remove from promotional email lists."
+            }
+          ],
+          "opt_in_recommendation": "Only contact customers with active WhatsApp consent.",
+          "frequency_cap": "1 message maximum. Suppress immediately after.",
+          "frequency_note": "Respect customer fatigue \u2014 this is a last-resort channel.",
+          "customer_io_tags": [
+            "lost",
+            "wa-reactivation"
+          ],
+          "kpi_targets": {
+            "read_rate": ">25%",
+            "response_rate": ">1%",
+            "opt_out": "<3%"
+          },
+          "segment": "Lost"
+        },
+        "promotions": {
+          "strategy": "Maximum Reactivation Offer",
+          "rationale": "Churned customers require a significantly compelling offer to return. 30% + free returns removes price AND risk barriers simultaneously.",
+          "promotions": [
+            {
+              "name": "Reactivation Discount",
+              "type": "percentage+returns",
+              "discount_pct": 30,
+              "benefit": "30% off entire order + free returns (no-risk trial)",
+              "frequency": "One-time, 90+ days since last order",
+              "max_per_year": 1,
+              "expiry_days": 7
+            }
+          ],
+          "avoid": "Repeated reactivation offers \u2014 trains price-seeking behaviour.",
+          "expected_margin_impact": "Deep margin hit (~30 points) but expected reactivation rate is low (3-8%). Total revenue recovery must exceed discount + returns cost.",
+          "segment": "Lost",
+          "roi_projections": [
+            {
+              "promotion": "Reactivation Discount",
+              "discount_pct": 30,
+              "expected_converters": 4,
+              "gross_revenue_est": 586.36,
+              "discount_cost_est": 175.91,
+              "net_revenue_est": 410.45,
+              "roi_pct": 233.3
+            }
+          ]
+        }
+      },
+      "Others": {
+        "metrics": {
+          "customer_count": 3,
+          "avg_clv": 710.61,
+          "total_clv": 2131.82,
+          "avg_monetary": 386.44,
+          "avg_frequency": 8.0,
+          "avg_recency_days": 15.0,
+          "avg_order_value": 386.44
+        },
+        "email": {
+          "strategy": "General Newsletter",
+          "objective": "Maintain brand awareness for unclassified customers.",
+          "email_sequence": [
+            {
+              "step": 1,
+              "trigger": "Monthly",
+              "subject_examples": [
+                "[Brand] Monthly Highlights \u2014 what's new this month"
+              ],
+              "body_focus": "Curated content: new arrivals, blog posts, community highlights.",
+              "cta": "Explore This Month's Picks"
+            }
+          ],
+          "send_frequency": "Monthly",
+          "optimal_timing": "First Tuesday of the month, 10:00",
+          "personalisation": [
+            "First name"
+          ],
+          "avoid": "Aggressive sales messaging without prior engagement data.",
+          "customer_io_tags": [
+            "general"
+          ],
+          "kpi_targets": {
+            "open_rate": ">20%",
+            "ctr": ">2%",
+            "unsubscribe": "<0.5%"
+          },
+          "segment": "Others"
+        },
+        "whatsapp": {
+          "strategy": "Transactional Only",
+          "objective": "Maintain trust through reliable order communication only.",
+          "flows": [
+            {
+              "flow": "Order Confirmation & Shipping",
+              "trigger": "order_placed / shipment_dispatched events",
+              "message_type": "transactional",
+              "template": "Hi {{first_name}}, your order #{{order_id}} is confirmed. We'll update you when it ships.",
+              "notes": "Stick to transactional until segment clarifies."
+            }
+          ],
+          "opt_in_recommendation": "Collect opt-in but do not send promotional messages yet.",
+          "frequency_cap": "Transactional only.",
+          "frequency_note": "Reassign segment before launching promotional flows.",
+          "customer_io_tags": [
+            "general"
+          ],
+          "kpi_targets": {
+            "read_rate": ">50%",
+            "response_rate": ">3%",
+            "opt_out": "<2%"
+          },
+          "segment": "Others"
+        },
+        "promotions": {
+          "strategy": "General Seasonal Promotions",
+          "rationale": "Unclassified customers should receive standard sitewide promotions only.",
+          "promotions": [
+            {
+              "name": "Seasonal Sale",
+              "type": "percentage",
+              "discount_pct": 10,
+              "benefit": "10% off sitewide during major sale events",
+              "frequency": "Quarterly (aligned with retail calendar)",
+              "max_per_year": 4
+            }
+          ],
+          "avoid": "Personalised offers until segment is properly classified.",
+          "expected_margin_impact": "Standard retail promotion margins.",
+          "segment": "Others",
+          "roi_projections": [
+            {
+              "promotion": "Seasonal Sale",
+              "discount_pct": 10,
+              "expected_converters": 0,
+              "gross_revenue_est": 92.75,
+              "discount_cost_est": 9.27,
+              "net_revenue_est": 83.47,
+              "roi_pct": 900.0
+            }
+          ]
+        }
+      }
+    },
+    "by_channel": {
+      "email": {
+        "segments": {
+          "Champion": {
+            "strategy": "VIP Reward & Referral",
+            "objective": "Deepen loyalty, leverage brand advocacy, increase referral revenue.",
+            "send_frequency": "2\u20133x per month",
+            "optimal_timing": "Tuesday\u2013Thursday, 10:00\u201312:00 local time",
+            "kpi_targets": {
+              "open_rate": ">35%",
+              "ctr": ">5%",
+              "unsubscribe": "<0.1%"
+            }
+          },
+          "Loyal": {
+            "strategy": "Cross-sell & Upsell Nurture",
+            "objective": "Increase basket size and introduce premium product lines.",
+            "send_frequency": "1\u20132x per month",
+            "optimal_timing": "Wednesday\u2013Thursday, 09:00\u201311:00 local time",
+            "kpi_targets": {
+              "open_rate": ">28%",
+              "ctr": ">4%",
+              "unsubscribe": "<0.2%"
+            }
+          },
+          "At_Risk": {
+            "strategy": "Win-Back Sequence (3-Email Flow)",
+            "objective": "Re-engage lapsing customers before they churn completely.",
+            "send_frequency": "3 emails over 17 days, then pause",
+            "optimal_timing": "Tuesday, 10:00\u201312:00 local time (highest re-engagement rates)",
+            "kpi_targets": {
+              "open_rate": ">18%",
+              "ctr": ">2.5%",
+              "unsubscribe": "<0.5%"
+            }
+          },
+          "Potential_Loyal": {
+            "strategy": "Second Purchase Incentive & Social Proof",
+            "objective": "Convert single or infrequent buyers into habitual purchasers.",
+            "send_frequency": "Weekly during onboarding (first 30 days)",
+            "optimal_timing": "Monday\u2013Wednesday, 10:00\u201313:00 local time",
+            "kpi_targets": {
+              "open_rate": ">22%",
+              "ctr": ">3%",
+              "unsubscribe": "<0.3%"
+            }
+          },
+          "Lost": {
+            "strategy": "Last-Chance Reactivation + Feedback",
+            "objective": "Recover a small percentage of churned customers; understand why others left.",
+            "send_frequency": "2 emails maximum, then suppress",
+            "optimal_timing": "Wednesday, 11:00 local time",
+            "kpi_targets": {
+              "open_rate": ">12%",
+              "ctr": ">1.5%",
+              "unsubscribe": "<1.0%"
+            }
+          },
+          "Others": {
+            "strategy": "General Newsletter",
+            "objective": "Maintain brand awareness for unclassified customers.",
+            "send_frequency": "Monthly",
+            "optimal_timing": "First Tuesday of the month, 10:00",
+            "kpi_targets": {
+              "open_rate": ">20%",
+              "ctr": ">2%",
+              "unsubscribe": "<0.5%"
+            }
+          }
+        }
+      },
+      "whatsapp": {
+        "segments": {
+          "Champion": {
+            "strategy": "VIP Concierge + Cart Recovery",
+            "objective": "Deliver premium, personalised service and recover abandoned carts fast.",
+            "send_frequency": "Max 4 promotional messages per month.",
+            "optimal_timing": "",
+            "kpi_targets": {
+              "read_rate": ">70%",
+              "response_rate": ">8%",
+              "opt_out": "<0.5%"
+            }
+          },
+          "Loyal": {
+            "strategy": "Restock Alerts + Cart Recovery",
+            "objective": "Keep loyal buyers informed of relevant restocks and recover lost revenue.",
+            "send_frequency": "Max 3 promotional messages per month.",
+            "optimal_timing": "",
+            "kpi_targets": {
+              "read_rate": ">60%",
+              "response_rate": ">5%",
+              "opt_out": "<1%"
+            }
+          },
+          "At_Risk": {
+            "strategy": "Win-Back via WhatsApp",
+            "objective": "High-visibility re-engagement complementing the email win-back flow.",
+            "send_frequency": "Max 2 win-back messages. Do not exceed.",
+            "optimal_timing": "",
+            "kpi_targets": {
+              "read_rate": ">40%",
+              "response_rate": ">2%",
+              "opt_out": "<2%"
+            }
+          },
+          "Potential_Loyal": {
+            "strategy": "Second Purchase Nudge",
+            "objective": "Use WhatsApp as a high-visibility channel to drive the second purchase.",
+            "send_frequency": "Max 2 promotional messages in first 30 days.",
+            "optimal_timing": "",
+            "kpi_targets": {
+              "read_rate": ">55%",
+              "response_rate": ">3%",
+              "opt_out": "<1.5%"
+            }
+          },
+          "Lost": {
+            "strategy": "Final Reactivation Attempt",
+            "objective": "One last high-value offer via WhatsApp to recover churned customers.",
+            "send_frequency": "1 message maximum. Suppress immediately after.",
+            "optimal_timing": "",
+            "kpi_targets": {
+              "read_rate": ">25%",
+              "response_rate": ">1%",
+              "opt_out": "<3%"
+            }
+          },
+          "Others": {
+            "strategy": "Transactional Only",
+            "objective": "Maintain trust through reliable order communication only.",
+            "send_frequency": "Transactional only.",
+            "optimal_timing": "",
+            "kpi_targets": {
+              "read_rate": ">50%",
+              "response_rate": ">3%",
+              "opt_out": "<2%"
+            }
+          }
+        }
+      }
+    },
+    "cohort_insights": {
+      "available": true,
+      "avg_m1_retention_pct": 54.3,
+      "total_cohorts": 23,
+      "latest_cohort": "2026-02",
+      "oldest_cohort": "2024-04"
+    },
+    "executive_summary": [
+      "Total analysed customer base: 500 customers with combined CLV of $609,675.",
+      "Highest-priority segment: Champion (86 customers, $197,465 total CLV).",
+      "URGENT: 126 customers are At Risk ($143,164 CLV). Launch win-back campaign immediately.",
+      "77 customers are Lost ($20,959 historical CLV). Deploy reactivation offer with 30% discount.",
+      "Month-1 cohort retention is strong at 54.3% (benchmark: 20%)."
+    ]
+  }
+}

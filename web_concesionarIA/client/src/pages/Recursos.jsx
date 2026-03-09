@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Footer from '../components/Footer';
+import { BookOpen, FileText, Trophy, CheckSquare, Video, ClipboardList } from 'lucide-react';
 
 const WA_URL = 'https://wa.me/19205414464';
 
 const resources = [
   {
     type: 'GUÍA',
-    icon: '📘',
+    icon: BookOpen,
     title: 'Cómo vender más autos por WhatsApp: Guía completa 2024',
     desc: 'Todo lo que necesitás saber para convertir tu WhatsApp Business en una máquina de ventas. Desde la configuración hasta el cierre.',
     color: '#6D2EFF',
@@ -14,7 +15,7 @@ const resources = [
   },
   {
     type: 'WHITEPAPER',
-    icon: '📄',
+    icon: FileText,
     title: 'El Estado Digital de las Concesionarias en LATAM',
     desc: 'Datos exclusivos sobre el estado actual de la digitalización automotriz en Argentina, México, Colombia y Brasil. Basado en 300+ concesionarias.',
     color: '#FF6A00',
@@ -22,7 +23,7 @@ const resources = [
   },
   {
     type: 'CASE STUDY',
-    icon: '🏆',
+    icon: Trophy,
     title: 'Caso Grupo Garden: 40% del mercado 0km en Paraguay',
     desc: 'Cómo el grupo automotriz más grande de Paraguay implementó ConcesionarIA y logró 40% de market share en menos de 12 meses.',
     color: '#10b981',
@@ -30,7 +31,7 @@ const resources = [
   },
   {
     type: 'CHECKLIST',
-    icon: '✅',
+    icon: CheckSquare,
     title: '14 señales de que tu concesionaria necesita IA urgente',
     desc: 'Diagnóstico rápido para saber si tu equipo está perdiendo leads por procesos manuales. Con solución para cada punto.',
     color: '#00C1D5',
@@ -38,7 +39,7 @@ const resources = [
   },
   {
     type: 'WEBINAR',
-    icon: '🎥',
+    icon: Video,
     title: 'Anti-Ghosting Engine: cómo dejar de perder leads calientes',
     desc: 'Grabación del webinar donde mostramos en vivo cómo el sistema detecta y reasigna leads no atendidos en tiempo real.',
     color: '#9B59FF',
@@ -46,7 +47,7 @@ const resources = [
   },
   {
     type: 'PLANTILLA',
-    icon: '📋',
+    icon: ClipboardList,
     title: 'Scripts de calificación: 15 preguntas que usa nuestra IA',
     desc: 'Las 15 preguntas exactas que usa ConcesionarIA para calificar un lead de auto en menos de 5 mensajes. Listo para copiar.',
     color: '#FF6A00',
@@ -133,7 +134,7 @@ export default function Recursos() {
                     <span style={{ ...styles.resourceType, color: r.color, background: `${r.color}15` }}>{r.type}</span>
                     <span style={styles.resourceTime}>{r.time}</span>
                   </div>
-                  <div style={styles.resourceIcon}>{r.icon}</div>
+                  <div style={styles.resourceIcon}><r.icon size={24} color={r.color} strokeWidth={1.5} /></div>
                   <h3 style={styles.resourceTitle}>{r.title}</h3>
                   <p style={styles.resourceDesc}>{r.desc}</p>
                   <button

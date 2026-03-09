@@ -1,23 +1,24 @@
 import React from 'react';
+import { Plug, Settings, Rocket, UserCircle } from 'lucide-react';
 
 const steps = [
   {
     number: '01',
     title: 'Conecta tu concesionaria',
     desc: 'Integra ConcesionarIA con tu web, WhatsApp Business, portales y CRM en menos de 1 hora. Sin desarrollo.',
-    icon: '🔌',
+    icon: Plug,
   },
   {
     number: '02',
     title: 'Configura tu IA automotriz',
     desc: 'Carga tu catálogo, modelos, precios y criterios de calificación. La IA aprende tu proceso de venta.',
-    icon: '⚙️',
+    icon: Settings,
   },
   {
     number: '03',
     title: 'Recibe compradores listos',
     desc: 'Los leads calificados llegan directo a tu CRM con su perfil completo: modelo, presupuesto y urgencia.',
-    icon: '🚀',
+    icon: Rocket,
   },
 ];
 
@@ -28,7 +29,7 @@ export default function HowItWorks() {
         <div style={styles.header}>
           <span style={styles.eyebrow}>CÓMO FUNCIONA</span>
           <h2 style={styles.title}>
-            En marcha en <span style={styles.highlight}>menos de 1 hora</span>
+            En marcha en <span style={styles.highlight}>menos de 2 semanas</span>
           </h2>
           <p style={styles.subtitle}>
             Sin meses de implementación. Sin equipos técnicos. Empieza a recibir leads calificados hoy mismo.
@@ -41,7 +42,7 @@ export default function HowItWorks() {
               <div style={styles.step}>
                 <div style={styles.stepTop}>
                   <span style={styles.stepNumber}>{step.number}</span>
-                  <div style={styles.stepIcon}>{step.icon}</div>
+                  <div style={styles.stepIcon}><step.icon size={26} color="#6D2EFF" strokeWidth={1.5} /></div>
                 </div>
                 <h3 style={styles.stepTitle}>{step.title}</h3>
                 <p style={styles.stepDesc}>{step.desc}</p>
@@ -59,15 +60,15 @@ export default function HowItWorks() {
         <div style={styles.testimonial}>
           <div style={styles.quoteIcon}>"</div>
           <p style={styles.quoteText}>
-            Antes perdíamos el 70% de los leads por demora en respuesta. Con ConcesionarIA, nuestra tasa
-            de conversión a test drive subió un 340% en el primer mes. El equipo de ventas ahora solo
-            habla con prospectos que ya quieren comprar.
+            La solución nos permitió transformar WhatsApp — nuestro canal más caótico — en la fuente de datos
+            más valiosa del negocio. Por primera vez, los gerentes tienen visibilidad real del funnel y los
+            vendedores compiten por responder primero.
           </p>
           <div style={styles.quoteAuthor}>
-            <div style={styles.avatar}>👨‍💼</div>
+            <div style={styles.avatar}><UserCircle size={28} color="#a78bfa" strokeWidth={1.5} /></div>
             <div>
-              <div style={styles.authorName}>Rodrigo Fernández</div>
-              <div style={styles.authorRole}>Gerente Comercial · Grupo Automotriz del Sur</div>
+              <div style={styles.authorName}>Gerente</div>
+              <div style={styles.authorRole}>Grupo Garden</div>
             </div>
           </div>
           <div style={styles.poweredBy}>

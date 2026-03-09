@@ -1,0 +1,104 @@
+bigquery:
+  project_id: "your-gcp-project-id"
+  dataset_id: "ecommerce_dataset"
+  location: "US"
+  tables:
+    orders: "orders"
+    order_items: "order_items"
+    customers: "customers"
+    email_events: "email_events"
+    whatsapp_events: "whatsapp_events"
+
+# ── Per-client configurations ────────────────────────────────────────────────
+clients:
+  oliovita:
+    project_id: "vx-operation"
+    dataset_id: "oliovita"
+    location: "US"
+    currency: "CLP"
+    platform: "shopify"
+    queries_dir: "queries/oliovita"   # custom SQL for this client
+    has_whatsapp: false
+
+  puraypunto:
+    project_id: "vx-operation"
+    dataset_id: "puraypunto"
+    location: "US"
+    currency: "ARS"
+    platform: "tiendanube"
+    queries_dir: "queries/puraypunto"
+    has_whatsapp: false
+
+  lure:
+    project_id: "vx-operation"
+    dataset_id: "lure"
+    location: "US"
+    currency: "USD"
+    platform: "shopify"
+    queries_dir: "queries/lure"
+    has_whatsapp: false
+
+  10whiskey:
+    project_id: "vx-operation"
+    dataset_id: "10whiskey"
+    location: "US"
+    currency: "ARS"
+    platform: "shopify"
+    queries_dir: "queries/10whiskey"
+    has_whatsapp: false
+
+customerio:
+  api_key: ""          # Set via CUSTOMERIO_API_KEY env var
+  site_id: ""          # Set via CUSTOMERIO_SITE_ID env var
+  region: "us"         # "us" or "eu"
+  base_url: "https://api.customer.io/v1"
+
+analysis:
+  rfm_periods_days: 365
+  clv_prediction_months: 12
+  min_orders_for_repeat: 2
+  cohort_lookback_months: 12
+  min_transactions_for_clv_model: 2
+
+segments:
+  Champion:
+    rfm_min: [4, 4, 4]    # [R_min, F_min, M_min]
+    rfm_max: [5, 5, 5]
+    description: "Best customers — high recency, frequency, and spend"
+    priority: 1
+  Loyal:
+    rfm_min: [3, 3, 3]
+    rfm_max: [5, 5, 5]
+    description: "Regular buyers with solid spend"
+    priority: 2
+  Potential_Loyal:
+    rfm_min: [3, 1, 1]
+    rfm_max: [5, 3, 5]
+    description: "Recent buyers with potential to become loyal"
+    priority: 3
+  New:
+    rfm_min: [4, 1, 1]
+    rfm_max: [5, 1, 5]
+    description: "Newly acquired customers"
+    priority: 4
+  At_Risk:
+    rfm_min: [1, 2, 2]
+    rfm_max: [3, 5, 5]
+    description: "Previously good customers drifting away"
+    priority: 5
+  Lost:
+    rfm_min: [1, 1, 1]
+    rfm_max: [2, 5, 5]
+    description: "Churned customers requiring reactivation"
+    priority: 6
+
+reporting:
+  output_dir: "outputs"
+  formats:
+    - markdown
+    - json
+  include_charts: true
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

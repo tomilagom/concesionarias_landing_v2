@@ -61,12 +61,6 @@ function ContactForm() {
       comentarios: f2.comentarios,
       ...utmParams,
     });
-    // POST to /api/contact (no-op if server isn't wired — form still progresses)
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...f1, ...f2 }),
-    }).catch(() => {});
     setStep(3);
   }
 

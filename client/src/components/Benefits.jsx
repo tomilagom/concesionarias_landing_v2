@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Zap, Target, TrendingUp, Bot, Link2, Shield } from 'lucide-react';
 
 const WA_URL = 'https://wa.me/19205414464';
@@ -37,11 +37,6 @@ const benefits = [
 ];
 
 export default function Benefits() {
-  const [stats, setStats] = useState(null);
-  useEffect(() => {
-    fetch('/api/stats').then(r => r.json()).then(setStats).catch(() => {});
-  }, []);
-
   return (
     <section style={styles.section} id="benefits">
       <div style={styles.container}>
@@ -94,8 +89,8 @@ export default function Benefits() {
           </div>
           <div style={styles.bannerStats}>
             {[
-              { value: stats?.clients || '300+', label: 'Concesionarias activas' },
-              { value: stats?.satisfaction || '98%', label: 'Satisfacción' },
+              { value: '300+', label: 'Concesionarias activas' },
+              { value: '98%', label: 'Satisfacción' },
               { value: '9.4x', label: 'ROI promedio en pauta' },
             ].map((s, i) => (
               <div key={i} style={styles.bannerStat}>

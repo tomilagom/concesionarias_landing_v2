@@ -439,8 +439,8 @@ const f = {
   },
   iframe: {
     width: '100%', height: '600px', borderRadius: '10px',
-    border: '0',
-    display: 'block',
+    border: '0', display: 'block',
+    background: '#ffffff', colorScheme: 'light',
   },
 };
 
